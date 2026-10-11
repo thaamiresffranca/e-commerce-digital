@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Loja Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Finalizar Compra 🚀</h1>
+        <nav class="nav-menu">
+            <a href="index.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">← Voltar para a Loja</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 600px;">
+        <section style="background-color: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <h2 style="margin-bottom: 1.5rem;">Dados do Cliente</h2>
+            
+            <form id="checkout-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Nome Completo:</label>
+                    <input type="text" id="name" placeholder="Digite seu nome" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-color); color: var(--text-color);">
+                </div>
+
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">E-mail:</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-color); color: var(--text-color);">
+                </div>
+
+                <div>
+                    <label for="payment" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Método de Pagamento:</label>
+                    <select id="payment" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-color); color: var(--text-color);">
+                        <option value="pix">Pix (Aprovação imediata)</option>
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="boleto">Boleto Bancário</option>
+                    </select>
+                </div>
+
+                <button type="submit" style="margin-top: 1rem; padding: 0.75rem; background-color: var(--primary-color); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Confirmar Pedido</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Loja Digital. Ambiente Seguro 🔒</p>
+    </footer>
+
+    <script>
+        // Validação simples do formulário no envio
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            
+            if (name.trim() === '') {
+                alert('Por favor, preencha o seu nome.');
+                return;
+            }
+
+            alert(`Parabéns, ${name}! Seu pedido foi realizado com sucesso. Obrigado por comprar na nossa loja digital!`);
+            localStorage.removeItem('cart'); // Limpa o carrinho após a compra
+            window.location.href = 'index.html'; // Volta para a home
+        });
+    </script>
+</body>
+</html>

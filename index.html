@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Digital 🚀</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho da Loja -->
+    <header>
+        <h1>Loja Digital 🚀</h1>
+        <nav class="nav-menu">
+            <input type="text" id="search-input" placeholder="Buscar produtos...">
+            <button id="theme-toggle">🌙 Modo Escuro</button>
+            <button id="cart-btn">🛒 Carrinho (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção de Filtros por Categoria -->
+        <section id="filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="cursos">Cursos</button>
+            <button class="filter-btn" data-category="ebooks">E-books</button>
+            <button class="filter-btn" data-category="templates">Templates</button>
+        </section>
+
+        <!-- Vitrine de Produtos (Onde o JS vai injetar os cards) -->
+        <section id="product-grid" class="grid">
+            <!-- Os cards de produtos serão carregados aqui automaticamente -->
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 - Loja Digital. Desenvolvido com carinho.</p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
